@@ -1,0 +1,113 @@
+<header class="header-6" *ngIf="showHeader" >
+  <div class="branding" >
+      <app-hamburg (event)="recmsg($event)"></app-hamburg>
+  </div>
+  <div class="header-nav" (click)="showHomePage()">
+    <a class="nav-link nav-text" (click)="toHome()">Home</a>
+    <a class="nav-link nav-text" (click)="toactivities()">Activities</a>
+    <a class="nav-link nav-text" (click)="tofound()">Founders</a>
+    <a class="nav-link nav-text" (click)="toAboutUs()">About Us</a>
+    <a class="nav-link nav-text" (click)="toContactUs()">Contact Us</a>
+  </div>
+  <div class="header-actions" *ngIf="!isLoggedIN">
+    
+    <a  class="nav-link nav-text"  (click)="tologin()"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+    routerLink="/login">LOGIN</a>
+  </div>
+  <div class="header-actions" *ngIf="isLoggedIN">
+    
+    <a  class="nav-link nav-text"  (click)="tologout()"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+    routerLink="/login">LOGOUT</a>
+  </div>
+</header>
+<div class="page-content" *ngIf="showHambPage" >
+  <router-outlet ></router-outlet>
+</div>
+<div id="mainPage" *ngIf="showHome"  >
+  <div class="app-name" id="showHomeee">
+    <img src="assets\pics\logo4.png" style="width:10%">
+    plasma donor 
+  </div>
+
+  <div class="imgviews">
+      <div class="row">
+          <div class="column">
+              <div class="card">
+                <img src="assets\pics\donor_pic.jpg" alt="Mike" style="width:100%">
+                <div class="container">
+                  <p>{{donorCount}} donors registered </p>
+                </div>
+              </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+              <img src="assets\pics\receipient.jpg" alt="Mike" style="width:100%">
+              <div class="container">
+                <p>{{recipientCount}} donors registered</p>
+              </div>
+            </div>
+          </div>
+      </div>   
+      <div class="row">
+          <div class="column">
+              <div class="card">
+                <img src="assets\pics\center.jpg" alt="Mike" style="width:100%">
+                <div class="container" id="showactivities">
+                  <p>{{centers}}centers registered</p>
+                </div>
+              </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+              <img src="assets\pics\homepic4.jpg" alt="Mike" style="width:100%">
+              <div class="container">
+                <p>{{members}}members registered</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+  </div> 
+  <div class="actviews">
+    
+    <app-activites></app-activites>
+  </div ><br id="lastimg1"><br><br>
+  
+  <div class="foundersviews">
+      <app-founders></app-founders>
+  </div><br id="lastimg2"><br><br>
+  <div class="abtviews">
+      <app-about></app-about>
+  </div><br id="lastimg3"><br><br>
+  <div class="cntctviews">
+      <app-contact-us></app-contact-us>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/">Home</a> -->
+    <!--  <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/centre">Centre</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/search-donor">Search for Donor</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/about">About Us</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/awareness">Awareness</a> -->

@@ -1,0 +1,45 @@
+<h2>Donate to make a change in many lives!</h2>
+<!-- <div class="random-message">{{ randomMessage }}</div> -->
+<div class="message" [ngClass]="getClassForMessage(randomMessage)">
+  {{ randomMessage }}
+</div>
+
+<div>
+  <label for="cityInput">Enter city:</label>
+  <input
+    id="cityInput"
+    type="text"
+    [(ngModel)]="city"
+    (input)="filterCentres()"
+  />
+</div>
+<div>
+  <h3>Donation Centres</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let centre of filteredCentres">
+        <td>{{ centre.name }}</td>
+        <td>{{ centre.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="filteredCentres.length === 0">
+    No donation centres found for {{ city }}.
+  </p>
+  <!-- <div>
+  <ul>
+    <li *ngFor="let centre of filteredCentres">
+      {{ centre.name }}
+    </li>
+    <li *ngIf="filteredCentres.length === 0">
+      No donation centres found for {{ city }}.
+    </li>
+  </ul> -->
+</div>

@@ -1,0 +1,59 @@
+select {
+    min-width: 150px;
+}
+
+.map {
+    padding: 10px;
+}
+.awareness{
+    padding: 0 30px;
+    margin: auto;
+    overflow: auto;
+    height: 100%;
+}
+.title{
+    font-size: 60px;
+    color: rgb(14, 17, 10);
+}
+#quote{
+    font-size: 30px;
+    color: cornflowerblue;
+    font-style: italic;
+    font-family: fantasy;
+    margin-top: 50px;
+}
+strong {
+    position: relative;
+  }
+  
+  strong::before {
+    /* Highlight color */
+    background-color: #46b96c;
+  
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-2deg);
+  }
+  .content{
+    text-align:justify
+  }
+  .cntnt1{
+    color: chocolate;
+    font-size: 20px;
+    font-style: oblique;
+    margin-top: 10px;
+  }
+  .cntnt1 p{
+    font-size: 15px;
+    color: black;
+
+  }
+  #eligibility{
+    margin-left: 50px;
+
+  }

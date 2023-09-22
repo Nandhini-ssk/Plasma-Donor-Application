@@ -1,0 +1,25 @@
+<div id="hamPage">
+    <div *ngIf = "clkvalid">
+      <div id="mySidebar" class="sidebar" >
+        <button type="button" (click)="closeNav()" id="closearrow">&#8592;</button>
+        <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+        routerLink="/donate" (click)="changePage()">Donate</a>
+        <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+        routerLink="/centre" (click)="changePage()">Centre</a>
+        <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+        routerLink="/search-donor" (click)="changePage()">Search for Donor</a>
+        <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+        routerLink="/awareness" (click)="changePage()">Awareness</a>
+      </div>
+      
+    </div>
+    
+    <div id="main">
+      <button class="openbtn" (click)="openNav()"  ngModel>☰ </button> 
+    </div> 
+    
+</div>
+
+<!-- <div class="page-content" *ngIf="!clkvalid && !mess">
+  <router-outlet></router-outlet>
+</div> -->
